@@ -10,7 +10,7 @@ namespace Merge_Two_Sorted_Lists
     {
         public ListNode MergeTwoLists(ListNode list1, ListNode list2)
         {
-            ListNode result = null;
+             ListNode result = new ListNode();
             if(list1== null)
             {
                 return list2;
@@ -21,21 +21,21 @@ namespace Merge_Two_Sorted_Lists
             }
             if (list1.val >= list2.val)
             {
-                result.val= list2.val;
-                list1.next= MergeTwoLists(list1.next, list2.next);
-                result.next = list1;
+                result= list2;
+                list2 = list2.next;
+                result.next = this.mergeTwoLists(list1,list2);
             }
             else
             {
-                result.val = list1.val;
-                list2.next = MergeTwoLists(list1.next, list2.next);
-                result.next = list2;
+                result = list1;
+                list1 = list1.next;
+                result.next = this.mergeTwoLists(list1, list2);
             }
 
 
 
 
-            return null;
+            return result;
         }
     }
 }
