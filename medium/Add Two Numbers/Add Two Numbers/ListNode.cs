@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Add_Two_Numbers
 {
-    public class ListNode
-    {
-        internal int val;
-        internal ListNode next;
-        private int v;
+    
 
-        public ListNode(int v)
+    public class ListNode
         {
-            this.v = v;
-        }
+    public int val;
+    public  ListNode next;
+    public  ListNode() { }
+    public ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ 
     }
 }
